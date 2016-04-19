@@ -1,6 +1,6 @@
 {
   "name": "functional-date-time-helpers",
-  "version": "0.0.0-semantically-released",
+  "version": "0.1.0",
   "description": "pure functional date time helpers",
   "main": "src/index.js",
   "scripts": {
