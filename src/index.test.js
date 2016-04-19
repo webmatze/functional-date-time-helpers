@@ -121,7 +121,7 @@ describe('time-helpers', function () {
       expect(time_helpers.endOfMonth(date).getFullYear()).to.equal(date.getFullYear())
     })
 
-    it('should return a Date with date set to 1 and hours, minutes, seconds and milliseconds set to 23:59:59:999', function () {
+    it('should return a Date with date set to end of months date and hours, minutes, seconds and milliseconds set to 23:59:59:999', function () {
       expect(time_helpers.endOfMonth(date).getHours()).to.equal(23)
       expect(time_helpers.endOfMonth(date).getMinutes()).to.equal(59)
       expect(time_helpers.endOfMonth(date).getSeconds()).to.equal(59)
@@ -131,6 +131,31 @@ describe('time-helpers', function () {
       endDate.setDate(1)
       endDate = time_helpers.subTime(time_helpers.days(1), endDate)
       expect(time_helpers.endOfMonth(date).getDate()).to.equal(endDate.getDate())
+    })
+
+  })
+
+  describe('seconds', function () {
+
+    it('should be a function', function () {
+      expect(time_helpers.seconds).to.be.a('function')
+    })
+
+    it('should take one parameter', function () {
+      expect(time_helpers.seconds).to.have.length(1)
+    })
+
+    it('should return a Number', function () {
+      expect(time_helpers.seconds(1)).to.be.a('number')
+    })
+
+    it('should return seconds as milliseconds', function () {
+      expect(time_helpers.seconds(1)).to.equal(1*1000)
+      expect(time_helpers.seconds(30)).to.equal(30*1000)
+    })
+
+    it('60 seconds should be the same as 1 minute', function () {
+      expect(time_helpers.seconds(60)).to.equal(time_helpers.minutes(1))
     })
 
   })
