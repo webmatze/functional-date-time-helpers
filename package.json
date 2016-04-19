@@ -4,7 +4,8 @@
   "description": "pure functional date time helpers",
   "main": "src/index.js",
   "scripts": {
-    "test": "mocha src/index.test.js -w"
+    "test": "istanbul cover -x *.test.js _mocha -- src/index.test.js -w",
+    "test:single": "istanbul cover -x *.test.js _mocha -- src/index.test.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   "homepage": "https://github.com/webmatze/functional-date-time-helpers#readme",
   "devDependencies": {
     "chai": "3.5.0",
+    "istanbul": "0.4.3",
     "mocha": "2.4.5"
   }
 }
