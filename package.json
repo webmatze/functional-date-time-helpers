@@ -1,0 +1,25 @@
+{
+  "name": "functional-date-time-helpers",
+  "version": "0.0.0-semantically-released",
+  "description": "pure functional date time helpers",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webmatze/functional-date-time-helpers.git"
+  },
+  "keywords": [
+    "pure",
+    "functional",
+    "date",
+    "time"
+  ],
+  "author": "Mathias Karstädt <mathias.karstaedt@gmail.com> (http://mathiaskarstaedt.de/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webmatze/functional-date-time-helpers/issues"
+  },
+  "homepage": "https://github.com/webmatze/functional-date-time-helpers#readme"
+}
