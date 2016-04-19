@@ -9,7 +9,7 @@ var startOfMonth = function (date) {
     return new Date(date.getFullYear(), date.getMonth(), 1);
 };
 var endOfMonth = function (date) {
-    return new Date(date.getFullYear(), date.getMonth() + 1, 0, 0, 0, 0, -1);
+    return new Date(date.getFullYear(), date.getMonth() + 1, 1, 0, 0, 0, -1);
 };
 var seconds = function (num) {
     return num * 1000;
