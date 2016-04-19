@@ -235,4 +235,28 @@ describe('time-helpers', function () {
 
   })
 
+  describe('addTime', function () {
+
+    var date = new Date()
+
+    it('should be a function', function () {
+      expect(time_helpers.addTime).to.be.a('function')
+    })
+
+    it('should take two parameters', function () {
+      expect(time_helpers.addTime).to.have.length(2)
+    })
+
+    it('should return a Date', function () {
+      expect(time_helpers.addTime(1, date)).to.be.an.instanceof(Date)
+    })
+
+    it('should add one day', function () {
+      var tomorrow = new Date(date)
+      tomorrow.setDate(tomorrow.getDate() + 1)
+      expect(time_helpers.addTime(time_helpers.days(1), date).toString()).to.equal(tomorrow.toString())
+    })
+
+  })
+
 })
