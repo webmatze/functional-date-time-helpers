@@ -38,4 +38,35 @@ describe('time-helpers', function () {
 
   })
 
+  describe('endOfDay', function () {
+
+    var date = new Date()
+
+    it('should be a function', function () {
+      expect(time_helpers.endOfDay).to.be.a('function')
+    })
+
+    it('should take one parameter', function () {
+      expect(time_helpers.endOfDay).to.have.length(1)
+    })
+
+    it('should return a Date object', function () {
+      expect(time_helpers.endOfDay(date)).to.be.an.instanceof(Date)
+    })
+
+    it('should return a Date with same day, month, year', function () {
+      expect(time_helpers.endOfDay(date).getDate()).to.equal(date.getDate())
+      expect(time_helpers.endOfDay(date).getMonth()).to.equal(date.getMonth())
+      expect(time_helpers.endOfDay(date).getFullYear()).to.equal(date.getFullYear())
+    })
+
+    it('should return a Date with hours, minutes, seconds and milliseconds set to 23:59:59:999', function () {
+      expect(time_helpers.endOfDay(date).getHours()).to.equal(23)
+      expect(time_helpers.endOfDay(date).getMinutes()).to.equal(59)
+      expect(time_helpers.endOfDay(date).getSeconds()).to.equal(59)
+      expect(time_helpers.endOfDay(date).getMilliseconds()).to.equal(999)
+    })
+
+  })
+
 })
