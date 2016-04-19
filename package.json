@@ -4,8 +4,8 @@
   "description": "pure functional date time helpers",
   "main": "src/index.js",
   "scripts": {
-    "test": "istanbul cover -x *.test.js _mocha -- src/index.test.js -w",
-    "test:single": "istanbul cover -x *.test.js _mocha -- src/index.test.js"
+    "test": "istanbul cover -x *.test.js _mocha -- -R spec src/index.test.js -w",
+    "test:single": "istanbul cover -x *.test.js _mocha -- -R spec src/index.test.js"
   },
   "repository": {
     "type": "git",
