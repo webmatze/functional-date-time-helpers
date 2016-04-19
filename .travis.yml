@@ -14,4 +14,4 @@ before_script:
 script:
   - npm run test:single
 after_success:
-  - npm run semantic_release
+  - npm run semantic-release
