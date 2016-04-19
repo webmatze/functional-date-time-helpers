@@ -160,4 +160,29 @@ describe('time-helpers', function () {
 
   })
 
+  describe('minutes', function () {
+
+    it('should be a function', function () {
+      expect(time_helpers.minutes).to.be.a('function')
+    })
+
+    it('should take one parameter', function () {
+      expect(time_helpers.minutes).to.have.length(1)
+    })
+
+    it('should return a Number', function () {
+      expect(time_helpers.minutes(1)).to.be.a('number')
+    })
+
+    it('should return minutes as milliseconds', function () {
+      expect(time_helpers.minutes(1)).to.equal(1*60*1000)
+      expect(time_helpers.minutes(30)).to.equal(30*60*1000)
+    })
+
+    it('60 minutes should be the same as 1 hour', function () {
+      expect(time_helpers.minutes(60)).to.equal(time_helpers.hours(1))
+    })
+
+  })
+
 })
