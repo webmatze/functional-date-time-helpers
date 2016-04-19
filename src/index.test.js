@@ -210,4 +210,29 @@ describe('time-helpers', function () {
 
   })
 
+  describe('days', function () {
+
+    it('should be a function', function () {
+      expect(time_helpers.days).to.be.a('function')
+    })
+
+    it('should take one parameter', function () {
+      expect(time_helpers.days).to.have.length(1)
+    })
+
+    it('should return a Number', function () {
+      expect(time_helpers.days(1)).to.be.a('number')
+    })
+
+    it('should return days as milliseconds', function () {
+      expect(time_helpers.days(1)).to.equal(1*24*60*60*1000)
+      expect(time_helpers.days(30)).to.equal(30*24*60*60*1000)
+    })
+
+    it('10 days should be the same as 240 hours', function () {
+      expect(time_helpers.days(10)).to.equal(time_helpers.hours(240))
+    })
+
+  })
+
 })
