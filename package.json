@@ -26,8 +26,12 @@
   "homepage": "https://github.com/webmatze/functional-date-time-helpers#readme",
   "devDependencies": {
     "chai": "3.5.0",
+    "condition-snap": "0.0.2",
     "istanbul": "0.4.3",
     "mocha": "2.4.5",
     "semantic-release": "^4.3.5"
+  },
+  "release": {
+    "verifyConditions": "condition-snap"
   }
 }
