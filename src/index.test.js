@@ -69,4 +69,35 @@ describe('time-helpers', function () {
 
   })
 
+  describe('startOfMonth', function () {
+
+    var date = new Date()
+
+    it('should be a function', function () {
+      expect(time_helpers.startOfMonth).to.be.a('function')
+    })
+
+    it('should take one parameter', function () {
+      expect(time_helpers.startOfMonth).to.have.length(1)
+    })
+
+    it('should return a Date object', function () {
+      expect(time_helpers.startOfMonth(date)).to.be.an.instanceof(Date)
+    })
+
+    it('should return a Date with same month and year', function () {
+      expect(time_helpers.startOfMonth(date).getMonth()).to.equal(date.getMonth())
+      expect(time_helpers.startOfMonth(date).getFullYear()).to.equal(date.getFullYear())
+    })
+
+    it('should return a Date with date set to 1 and hours, minutes, seconds and milliseconds set to 0', function () {
+      expect(time_helpers.startOfMonth(date).getHours()).to.equal(0)
+      expect(time_helpers.startOfMonth(date).getMinutes()).to.equal(0)
+      expect(time_helpers.startOfMonth(date).getSeconds()).to.equal(0)
+      expect(time_helpers.startOfMonth(date).getMilliseconds()).to.equal(0)
+      expect(time_helpers.startOfMonth(date).getDate()).to.equal(1)
+    })
+
+  })
+
 })
