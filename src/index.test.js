@@ -100,4 +100,39 @@ describe('time-helpers', function () {
 
   })
 
+  describe('endOfMonth', function () {
+
+    var date = new Date()
+
+    it('should be a function', function () {
+      expect(time_helpers.endOfMonth).to.be.a('function')
+    })
+
+    it('should take one parameter', function () {
+      expect(time_helpers.endOfMonth).to.have.length(1)
+    })
+
+    it('should return a Date object', function () {
+      expect(time_helpers.endOfMonth(date)).to.be.an.instanceof(Date)
+    })
+
+    it('should return a Date with same month and year', function () {
+      expect(time_helpers.endOfMonth(date).getMonth()).to.equal(date.getMonth())
+      expect(time_helpers.endOfMonth(date).getFullYear()).to.equal(date.getFullYear())
+    })
+
+    it('should return a Date with date set to 1 and hours, minutes, seconds and milliseconds set to 23:59:59:999', function () {
+      expect(time_helpers.endOfMonth(date).getHours()).to.equal(23)
+      expect(time_helpers.endOfMonth(date).getMinutes()).to.equal(59)
+      expect(time_helpers.endOfMonth(date).getSeconds()).to.equal(59)
+      expect(time_helpers.endOfMonth(date).getMilliseconds()).to.equal(999)
+      var endDate = new Date(date)
+      endDate.setMonth(date.getMonth() + 1)
+      endDate.setDate(1)
+      endDate = time_helpers.subTime(time_helpers.days(1), endDate)
+      expect(time_helpers.endOfMonth(date).getDate()).to.equal(endDate.getDate())
+    })
+
+  })
+
 })
