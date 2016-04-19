@@ -185,4 +185,29 @@ describe('time-helpers', function () {
 
   })
 
+  describe('hours', function () {
+
+    it('should be a function', function () {
+      expect(time_helpers.hours).to.be.a('function')
+    })
+
+    it('should take one parameter', function () {
+      expect(time_helpers.hours).to.have.length(1)
+    })
+
+    it('should return a Number', function () {
+      expect(time_helpers.hours(1)).to.be.a('number')
+    })
+
+    it('should return hours as milliseconds', function () {
+      expect(time_helpers.hours(1)).to.equal(1*60*60*1000)
+      expect(time_helpers.hours(30)).to.equal(30*60*60*1000)
+    })
+
+    it('24 hours should be the same as 1 day', function () {
+      expect(time_helpers.hours(24)).to.equal(time_helpers.days(1))
+    })
+
+  })
+
 })
