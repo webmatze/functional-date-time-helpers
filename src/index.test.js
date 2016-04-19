@@ -259,4 +259,28 @@ describe('time-helpers', function () {
 
   })
 
+  describe('subTime', function () {
+
+    var date = new Date()
+
+    it('should be a function', function () {
+      expect(time_helpers.subTime).to.be.a('function')
+    })
+
+    it('should take two parameters', function () {
+      expect(time_helpers.subTime).to.have.length(2)
+    })
+
+    it('should return a Date', function () {
+      expect(time_helpers.subTime(1, date)).to.be.an.instanceof(Date)
+    })
+
+    it('should subtract one day', function () {
+      var yesterday = new Date(date)
+      yesterday.setDate(yesterday.getDate() - 1)
+      expect(time_helpers.subTime(time_helpers.days(1), date).toString()).to.equal(yesterday.toString())
+    })
+
+  })
+
 })
