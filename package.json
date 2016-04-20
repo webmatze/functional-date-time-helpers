@@ -2,7 +2,7 @@
   "name": "functional-date-time-helpers",
   "description": "pure functional date time helpers",
   "main": "src/index.js",
-  "version": "0.0.0-semantically-released",
+  "version": "1.0.0",
   "scripts": {
     "test": "istanbul cover -x *.test.js _mocha -- -R spec src/index.test.js -w",
     "test:single": "istanbul cover -x *.test.js _mocha -- -R spec src/index.test.js",
