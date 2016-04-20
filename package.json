@@ -6,6 +6,10 @@
   "scripts": {
     "test": "istanbul cover -x *.test.js _mocha -- -R spec src/index.test.js -w",
     "test:single": "istanbul cover -x *.test.js _mocha -- -R spec src/index.test.js",
+    "build": "npm run build:browser && npm run build:browser-min && npm run build:main",
+    "build:browser": "webpack --output-filename functional-date-time-helpers.browser.js",
+    "build:browser-min": "webpack --output-filename functional-date-time-helpers.browser.min.js -p",
+    "build:main": "cp src/index.js dist/functional-date-time-helpers.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
