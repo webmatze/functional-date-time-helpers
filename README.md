@@ -6,3 +6,43 @@ Status:
 [![Build Status](https://img.shields.io/snap-ci/webmatze/functional-date-time-helpers/master.svg?style=flat-square)](https://snap-ci.com/webmatze/functional-date-time-helpers)
 
 functional-date-time-helpers are a few pure functions to manipulate date and time in your JavaScript projects. Think of it as a lightweight alternative to moment.js
+
+## Usage (node)
+
+Install through npm
+
+````
+npm install --save functional-date-time-helpers
+````
+
+Require the library
+
+````javascript
+var dth = require('functional-date-time-helpers')
+````
+
+Use the provided functions
+
+````javascript
+var threeMinutesInMilliseconds = dth.minutes(3)
+````
+
+## Usage (browser)
+
+Install using bower
+
+````
+bower install --save functional-date-time-helpers
+````
+
+include it in your html page
+
+````
+<script src="/path/to/dist/functional-date-time-helpers.browser.js" type="text/javascript"></script>
+````
+
+Use the provided functions
+
+````javascript
+var threeMinutesInMilliseconds = minutes(3)
+````
