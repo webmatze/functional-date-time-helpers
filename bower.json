@@ -1,0 +1,24 @@
+{
+  "name": "functional-date-time-helpers",
+  "description": "pure functional date time helpers",
+  "main": "src/index.js",
+  "authors": [
+    "Mathias Karstädt <mathias.karstaedt@gmail.com> (http://mathiaskarstaedt.de/)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "pure",
+    "functional",
+    "date",
+    "time"
+  ],
+  "homepage": "https://github.com/webmatze/functional-date-time-helpers",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "node_modules",
+    "coverage",
+    "src/*.test.js"
+  ]
+}
