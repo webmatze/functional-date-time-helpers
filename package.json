@@ -30,9 +30,7 @@
   "homepage": "https://github.com/webmatze/functional-date-time-helpers#readme",
   "devDependencies": {
     "@semantic-release/condition-codeship": "1.1.0",
-    "babel": "6.5.2",
     "chai": "3.5.0",
-    "condition-snap": "0.0.2",
     "ghooks": "1.2.1",
     "istanbul": "0.4.3",
     "mocha": "2.4.5",
