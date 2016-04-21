@@ -45,6 +45,7 @@
     }
   },
   "release": {
+    "branch": "codeship",
     "verifyConditions": "@semantic-release/condition-codeship"
   }
 }
