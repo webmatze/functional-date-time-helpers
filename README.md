@@ -18,13 +18,13 @@ npm install --save functional-date-time-helpers
 Require the library
 
 ````javascript
-var dth = require('functional-date-time-helpers')
+var fdth = require('functional-date-time-helpers')
 ````
 
 Use the provided functions
 
 ````javascript
-var threeMinutesInMilliseconds = dth.minutes(3)
+var threeMinutesInMilliseconds = fdth.minutes(3)
 ````
 
 ## Usage (browser)
@@ -44,7 +44,9 @@ include it in your html page
 Use the provided functions
 
 ````javascript
-var threeMinutesInMilliseconds = minutes(3)
+var fdth = window.functionalDateTimeHelpers;
+var now = new Date();
+var inThreeDays = fdth.addTime(fdth.days(3), now);
 ````
 
 ## Performance
