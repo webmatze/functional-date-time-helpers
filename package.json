@@ -36,7 +36,7 @@
     "ghooks": "1.2.1",
     "istanbul": "0.4.3",
     "mocha": "2.4.5",
-    "semantic-release": "^4.3.5",
+    "semantic-release": "6.2.1",
     "webpack": "1.13.0"
   },
   "config": {
