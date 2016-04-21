@@ -45,6 +45,6 @@
     }
   },
   "release": {
-    "verifyConditions": "condition-codeship"
+    "verifyConditions": "@semantic-release/condition-codeship"
   }
 }
