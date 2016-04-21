@@ -46,3 +46,19 @@ Use the provided functions
 ````javascript
 var threeMinutesInMilliseconds = minutes(3)
 ````
+
+## Performance
+
+One of the goals of this library is to provide fast functions for date and time manipulation.
+
+While the popular Moment.js is a great library with lots of functionality it has also some performance problems when manipulation date and time.
+
+That is why I created functional-date-time-helpers with optimized functions that can give you a significant performance boost compared to the equivalent functions of Moment.js.
+
+I also included a benchmark suite that you can run to check the performance of each function.
+
+To run the benchmark simply call this command:
+
+````
+npm run perf
+````
