@@ -283,4 +283,71 @@ describe('time-helpers', function () {
 
   })
 
+  describe('isLeapYear', function () {
+
+    it('should be a function', function () {
+      expect(time_helpers.isLeapYear).to.be.a('function')
+    })
+
+    it('should take one parameter', function () {
+      expect(time_helpers.isLeapYear).to.have.length(1)
+    })
+
+    it('should return a boolean', function () {
+      expect(time_helpers.isLeapYear(2000)).to.be.a('boolean')
+    })
+
+    it('should be leap years', function () {
+      expect(time_helpers.isLeapYear(2000)).to.be.true
+      expect(time_helpers.isLeapYear(2008)).to.be.true
+    })
+
+    it('should not be leap years', function () {
+      expect(time_helpers.isLeapYear(2010)).to.be.false
+      expect(time_helpers.isLeapYear(2100)).to.be.false
+    })
+
+  })
+
+  describe('getDaysInMonth', function () {
+
+    it('should be a function', function () {
+      expect(time_helpers.getDaysInMonth).to.be.a('function')
+    })
+
+    it('should take one parameter', function () {
+      expect(time_helpers.getDaysInMonth).to.have.length(2)
+    })
+
+    it('should return a number', function () {
+      expect(time_helpers.getDaysInMonth(4, 2016)).to.be.a('number')
+    })
+
+    it('should be 30 days', function () {
+      expect(time_helpers.getDaysInMonth(4, 2016)).to.equal(30)
+      expect(time_helpers.getDaysInMonth(6, 2016)).to.equal(30)
+      expect(time_helpers.getDaysInMonth(9, 2016)).to.equal(30)
+      expect(time_helpers.getDaysInMonth(11, 2016)).to.equal(30)
+    })
+
+    it('should be 28 days', function () {
+      expect(time_helpers.getDaysInMonth(2, 2010)).to.equal(28)
+    })
+
+    it('should be 29 days', function () {
+      expect(time_helpers.getDaysInMonth(2, 2016)).to.equal(29)
+    })
+
+    it('should be 31 days', function () {
+      expect(time_helpers.getDaysInMonth(1, 2016)).to.equal(31)
+      expect(time_helpers.getDaysInMonth(3, 2016)).to.equal(31)
+      expect(time_helpers.getDaysInMonth(5, 2016)).to.equal(31)
+      expect(time_helpers.getDaysInMonth(7, 2016)).to.equal(31)
+      expect(time_helpers.getDaysInMonth(8, 2016)).to.equal(31)
+      expect(time_helpers.getDaysInMonth(10, 2016)).to.equal(31)
+      expect(time_helpers.getDaysInMonth(12, 2016)).to.equal(31)
+    })
+
+  })
+
 })
