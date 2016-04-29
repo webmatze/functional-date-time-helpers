@@ -315,7 +315,7 @@ describe('time-helpers', function () {
       expect(time_helpers.getDaysInMonth).to.be.a('function')
     })
 
-    it('should take one parameter', function () {
+    it('should take two parameter', function () {
       expect(time_helpers.getDaysInMonth).to.have.length(2)
     })
 
@@ -346,6 +346,47 @@ describe('time-helpers', function () {
       expect(time_helpers.getDaysInMonth(8, 2016)).to.equal(31)
       expect(time_helpers.getDaysInMonth(10, 2016)).to.equal(31)
       expect(time_helpers.getDaysInMonth(12, 2016)).to.equal(31)
+    })
+
+  })
+
+  describe('addMonths', function () {
+
+    it('should be a function', function () {
+      expect(time_helpers.addMonths).to.be.a('function')
+    })
+
+    it('should take two parameter', function () {
+      expect(time_helpers.addMonths).to.have.length(2)
+    })
+
+    it('should return a Date', function () {
+      var date = new Date()
+      expect(time_helpers.addMonths(1, date)).to.be.an.instanceof(Date)
+    })
+
+    it('should add 31 days', function () {
+      var date = new Date(2016, 0, 1, 0, 0, 0, 0)
+      var nextMonth = time_helpers.addMonths(1, date)
+      expect(nextMonth - date).to.equal(time_helpers.days(31))
+    })
+
+    it('should add 29 days', function () {
+      var date = new Date(2016, 1, 1, 0, 0, 0, 0)
+      var nextMonth = time_helpers.addMonths(1, date)
+      expect(nextMonth - date).to.equal(time_helpers.days(time_helpers.getDaysInMonth(2, 2016)))
+    })
+
+    it('should add 60 days and 23 hours (change to Summertime)', function () {
+      var date = new Date(2016, 2, 1, 0, 0, 0, 0)
+      var nextMonth = time_helpers.addMonths(2, date)
+      expect(nextMonth - date).to.equal(time_helpers.days(60) + time_helpers.hours(23))
+    })
+
+    it('should add 61 days', function () {
+      var date = new Date(2016, 4, 1, 0, 0, 0, 0)
+      var nextMonth = time_helpers.addMonths(2, date)
+      expect(nextMonth - date).to.equal(time_helpers.days(61))
     })
 
   })

@@ -36,6 +36,11 @@ var isLeapYear = function (year) {
 var getDaysInMonth = function (month, year) {
   return month == 1 ? 31 : month == 3 ? 31 : month == 4 ? 30 : month == 5 ? 31 : month == 6 ? 30 : month == 7 ? 31 : month == 8 ? 31 : month == 9 ? 30 : month == 10 ? 31 : month == 11 ? 30 : month == 12 ? 31 : isLeapYear(year) ? 29 : 28
 }
+var addMonths = function (months, date) {
+  var result = new Date(date)
+  result.setMonth(date.getMonth() + months)
+  return result
+}
 module.exports = {
   startOfDay: startOfDay,
   endOfDay: endOfDay,
@@ -48,5 +53,6 @@ module.exports = {
   addTime: addTime,
   subTime: subTime,
   isLeapYear: isLeapYear,
-  getDaysInMonth: getDaysInMonth
+  getDaysInMonth: getDaysInMonth,
+  addMonths: addMonths
 }
