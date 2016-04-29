@@ -45,6 +45,19 @@ suites.push(
     })
 )
 
+suites.push(
+  new Benchmark.Suite('Compare fdth.daysInMonth with moment#daysInMonth').add('fdth.daysInMonth (with date creation)', function () {
+    var february = new Date(2016, 1, 1)
+    fdth.daysInMonth(february.getMonth(), february.getYear())
+  })
+  .add("fdth.daysInMonth (without date creation)", function () {
+    fdth.daysInMonth(2, 2016)
+  })
+  .add("moment#daysInMonth", function () {
+    moment('2016-02', "YYYY-MM").daysInMonth()
+  })
+)
+
 suites.forEach(function (suite) {
   suite.on('start', function (event) {
     console.log(event.currentTarget.name)
